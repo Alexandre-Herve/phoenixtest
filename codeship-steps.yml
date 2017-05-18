@@ -1,6 +1,6 @@
-# - name: test
-  # service: test
-  # command: ./wait_and_test.sh
+- name: test
+  service: test
+  command: ./wait_and_test.sh
 
 - service: release
   type: push
