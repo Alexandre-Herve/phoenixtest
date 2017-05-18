@@ -1,0 +1,29 @@
+aws_dockercfg:
+  image: codeship/aws-ecr-dockercfg-generator
+  add_docker: true
+  encrypted_env_file: .aws.env.encrypted
+
+test:
+  build:
+    image: test
+    dockerfile: Dockerfile
+
+  environment:
+    DATABASE_HOST: "psql"
+    MIX_ENV: "test"
+
+  links:
+    - psql
+
+  volumes:
+    - ./wait.sh:/wait.sh
+
+psql:
+  image: postgres:9.3.6
+  ports:
+    - "5432:5432"
+
+release:
+  build:
+    image: release
+    dockerfile: Dockerfile.release

@@ -31,3 +31,7 @@ npm-debug.log
 
 # secret config
 .env
+
+# Codeship
+codeship.aes
+.aws.env

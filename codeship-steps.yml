@@ -1,0 +1,10 @@
+# - name: test
+  # service: test
+  # command: ./wait_and_test.sh
+
+- service: release
+  type: push
+  # tag: master
+  image_name: 383646808490.dkr.ecr.eu-west-1.amazonaws.com/test/phoenixtest:latest
+  registry: https://383646808490.dkr.ecr.eu-west-1.amazonaws.com
+  dockercfg_service: aws_dockercfg
