@@ -1,0 +1,41 @@
+version: "2"
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "4000:4000"
+    depends_on:
+      - psql
+    env_file: .env
+    environment:
+        DATABASE_HOST: "psql"
+        HOST: "localhost"
+        MIX_ENV: "dev"
+        PORT: "4000"
+        SECRET_KEY_BASE: "1234"
+    volumes:
+      - .:/opt/app
+
+  psql:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - database:/var/lib/postgresql/data
+
+  test:
+    build:
+      context: .
+    depends_on:
+      - psql
+    environment:
+      DATABASE_HOST: "psql"
+      MIX_ENV: "test"
+    volumes:
+      - .:/opt/app
+
+volumes:
+  database:
+    driver: local
