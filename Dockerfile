@@ -10,4 +10,4 @@ RUN mix do deps.get, deps.compile
 
 ADD . .
 
-CMD ["iex", "-S", "mix", "phoenix.server"]
+CMD ["mix", "phoenix.server"]
