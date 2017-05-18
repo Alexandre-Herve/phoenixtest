@@ -64,4 +64,14 @@ config :logger, level: :info
 
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
-import_config "prod.secret.exs"
+# import_config "prod.secret.exs"
+
+config :app, App.Web.Endpoint,
+  secret_key_base: System.get_env("SECRET_KEY_BASE") 
+
+# Configure your database
+config :app, App.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  ssl: true,
+  url: System.get_env("DATABASE_URL")
+  pool_size: 15

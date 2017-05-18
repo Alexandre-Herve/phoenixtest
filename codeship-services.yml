@@ -27,3 +27,4 @@ release:
   build:
     image: release
     dockerfile: Dockerfile.release
+  encrypted_env_file: .env.encrypted
