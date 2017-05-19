@@ -5,7 +5,7 @@ defmodule App.Pets.Cat do
 
 
   schema "pets_cats" do
-    field :destroyed_couch_count, :integer
+    field :destroyed_couch_count, :integer, default: 0
     field :name, :string
     field :surname, :string
 
