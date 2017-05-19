@@ -24,6 +24,8 @@ release:
   build:
     image: 383646808490.dkr.ecr.eu-west-1.amazonaws.com/test/phoenixtest
     dockerfile: Dockerfile.release
+  environment:
+    MIX_ENV: "prod"
   encrypted_env_file: .env.encrypted
 
 
