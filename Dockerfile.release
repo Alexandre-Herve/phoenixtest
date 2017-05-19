@@ -20,4 +20,4 @@ RUN \
 
 WORKDIR /opt/myapp
 
-CMD REPLACE_OS_VARS=true ./bin/app foreground
+CMD ./bin/app foreground
