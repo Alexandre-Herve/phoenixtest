@@ -1,6 +1,7 @@
 FROM bitwalker/alpine-elixir:latest
 
 EXPOSE 4000
+
 ENV PORT=4000 \
     MIX_ENV=prod
 
@@ -19,4 +20,4 @@ RUN \
 
 WORKDIR /opt/myapp
 
-CMD ./bin/app foreground
+CMD REPLACE_OS_VARS=true ./bin/app foreground
