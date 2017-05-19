@@ -7,7 +7,7 @@ config :app, App.Web.Endpoint,
   server: true,
   url: [
     host: {:system, "${HOST}"},
-    port: {:system, "${PORT}"}
+    port: {:system, "${PORT}"},
     scheme: "http"
   ]
 
