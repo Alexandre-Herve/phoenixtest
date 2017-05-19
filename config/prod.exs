@@ -18,4 +18,7 @@ config :app, App.Repo,
   username: "${RDS_USERNAME}",
   password: "${RDS_PASSWORD}",
   database: "${RDS_DB_NAME}",
+  hostname: "${RDS_HOSTNAME}",
+  port: "${RDS_PORT}" || 5432,
+  ssl: true,
   pool_size: 15
