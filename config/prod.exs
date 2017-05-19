@@ -1,13 +1,13 @@
 use Mix.Config
 
 config :app, App.Web.Endpoint,
-  http: [port: {:system, "${PORT}"}],
+  http: [port: "${PORT}"],
   # on_init: {App.Web.Endpoint, :load_from_system_env, []},
-  secret_key_base: System.get_env("${SECRET_KEY_BASE}"),
+  secret_key_base: "${SECRET_KEY_BASE}",
   server: true,
   url: [
-    host: {:system, "${HOST}"},
-    port: {:system, "${PORT}"},
+    host: "${APP_URL}",
+    port: "${PORT}",
     scheme: "http"
   ]
 
