@@ -3,7 +3,8 @@ use Mix.Config
 config :app, App.Web.Endpoint,
   http: [port: {:system, "${PORT}"}],
   url: [
-    host: {:system, "${APP_URL}"}
+    host: {:system, "${APP_URL}"},
+    scheme: "http"
   ],
   on_init: {App.Web.Endpoint, :load_from_system_env, []},
   server: true
