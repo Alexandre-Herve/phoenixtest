@@ -28,8 +28,8 @@ environment :dev do
 end
 
 environment :prod do
-  set include_erts: false
-  set include_src: false
+  set include_erts: true
+  set include_src: true
   set cookie: :"K4Ce8xHHob?go2AgJ`J`jeg>THBBAw=$K)3</<XC%5.$1/zVZVwvegsR]GYco,1g"
 end
 
@@ -44,4 +44,3 @@ release :app do
     :runtime_tools
   ]
 end
-
